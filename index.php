@@ -1,6 +1,7 @@
 <?php
 
-use Boa\Database\SQL;
+require __DIR__ . '/Boa/Boa.php';
+new Boa\App;
 
-$sql = new SQL("localhost", "database", "pass", "user");
+$sql = new Boa\Database\SQL();
 $sql->query("SELECT * FROM images", "ALL");
