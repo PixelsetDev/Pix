@@ -1,7 +1,9 @@
 <?php
 
-require __DIR__.'/Boa/Boa.php';
-new Boa\App();
+use Boa\HTTP\Router;
 
-$sql = new Boa\Database\SQL();
-$sql->query('SELECT * FROM images', 'ALL');
+require __DIR__ . '/Boa/HTTP/Router.php';
+
+$Router = new Router();
+
+$Router->GET('', '/Views/Homepage.php');
