@@ -1,20 +1,17 @@
 <?php
 
-namespace Pixelset;
+namespace Pix;
 
 use Boa\Authentication\Session;
 use Boa\HTTP\Router;
-use Boa\Database\MySQL;
 
 class Startup {
     private Router $Router;
     private Session $Session;
-    private MySQL $Database;
 
     public function __construct() {
         $this->Settings();
         $this->SessionStart();
-        $this->Database();
         $this->Router();
         $this->Routes();
     }
@@ -26,12 +23,6 @@ class Startup {
         $this->Session->Start();
     }
 
-    private function Database(): void {
-        require __DIR__ . '/../Boa/Database/MySQL.php';
-
-        $this->Database = new MySQL(DATABASE_HOST, DATABASE_USER, DATABASE_PASS, DATABASE_NAME, DATABASE_PORT);
-    }
-
     private function Router(): void {
         require __DIR__ . '/../Boa/HTTP/Router.php';
 
@@ -39,11 +30,19 @@ class Startup {
     }
 
     private function Routes(): void {
-        $this->Router->GET('', '/Views/Homepage.php');
+        require __DIR__ . '/Routes.php';
+
+        $Routes = new Routes($this->Router);
+        $Routes->Public();
+        $Routes->Album();
     }
 
     private function Settings(): void {
-        $PixelsetRequest = true;
-        require __DIR__ . '/../Settings.php';
+        if (file_exists(__DIR__ . '/../Settings.php')) {
+            require __DIR__ . '/../Settings.php';
+        } else {
+            echo 'Settings.php not found, aborting...';
+            exit;
+        }
     }
 }

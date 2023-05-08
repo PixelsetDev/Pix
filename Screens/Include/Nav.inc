@@ -3,6 +3,6 @@
                 <p class="text-lg"><?= WEBSITE_NAME; ?></p>
             </div>
             <div>
-                <a href="<?= PIXELSET_ROOT; ?>account" class="pix-btn pix-btn-dynamic">Login</a>
+                <a href="<?= PIX_ROOT; ?>account" class="pix-btn pix-btn-dynamic">Login</a>
             </div>
         </nav>

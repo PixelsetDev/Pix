@@ -1,14 +1,18 @@
 <?php
 
-if (!isset($PixelsetRequest)) {
+global $PixRequest;
+
+if (!$PixRequest) {
+    echo 'Non-Pixelset request detected, aborting...';
     exit;
 }
 
-const PIXELSET_LANGUAGE = 'en';
-const PIXELSET_ROOT = '/';
-const WEBSITE_NAME = 'Pixelset Photography';
+const PIX_LANGUAGE = 'en';
+const PIX_ROOT = '/';
+const WEBSITE_NAME = 'My Pix Gallery';
 const DATABASE_HOST = '';
 const DATABASE_NAME = '';
 const DATABASE_PORT = 3306;
 const DATABASE_USER = '';
 const DATABASE_PASS = '';
+const DATABASE_PREFIX = 'pix_';

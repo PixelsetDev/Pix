@@ -81,10 +81,10 @@ body {
 
 /* Grid */
 .pix-grid {
-    @apply grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4;
+    @apply grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4;
 }
 .pix-colspan-full {
-    @apply lg:col-span-4 md:col-span-3 sm:col-span-2 col-span-1;
+    @apply lg:col-span-3 md:col-span-2 col-span-1;
 }
 
 /* Card */

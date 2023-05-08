@@ -1,6 +1,8 @@
 <?php
 
-use Pixelset\Startup;
+use Pix\Startup;
+
+$PixRequest = true;
 
 require __DIR__ . '/Processes/Startup.php';
 
