@@ -694,6 +694,25 @@ body {
 
 /* Text */
 
+.pix-header{
+  margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px){
+  .pix-header{
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .pix-header{
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+}
+
 .pix-text-xxl{
   font-size: 1.875rem;
   line-height: 2.25rem;
