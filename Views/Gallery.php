@@ -9,5 +9,8 @@
         <?php require __DIR__ . '/Include/Nav.inc'; ?>
 
         <h1 class="pix-text-xxl pix-font-bold">Gallery</h1>
+
+        <?php require __DIR__ . '/Include/Footer.inc'; ?>
+
     </body>
 </html>

@@ -75,3 +75,22 @@ body {
 .pix-btn-danger {
     @apply bg-red-500 hover:bg-red-400 text-white;
 }
+.pix-inline-link {
+    @apply underline hover:text-blue-500 transition duration-200;
+}
+
+/* Grid */
+.pix-grid {
+    @apply grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4;
+}
+.pix-colspan-full {
+    @apply lg:col-span-4 md:col-span-3 sm:col-span-2 col-span-1;
+}
+
+/* Card */
+.pix-card {
+    @apply rounded-md bg-neutral-50 shadow-lg hover:shadow-xl transition duration-200;
+}
+.pix-card-content {
+    @apply px-6 py-4;
+}
