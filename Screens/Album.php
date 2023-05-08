@@ -45,10 +45,14 @@
                 <?php
                 } else {
                     foreach ($AlbumImages as $Image) {
+                        $ImageTitle = $Image['title'];
+                        if ($ImageTitle == NULL) {
+                            $ImageTitle = "An image in the album ". $ThisAlbum->name .".";
+                        }
                 ?>
                 <div class="pix-card">
                     <p class="pix-card-content pix-text-sm">
-                        <img src="/Storage/<?= $AlbumID; ?>/<?= $Image['file']; ?>" alt="<?= $Image['alt']; ?>">
+                        <img src="/Storage/<?= $AlbumID; ?>/<?= $Image['file']; ?>" alt="<?= $ImageTitle ?>">
                     </p>
                 </div>
                 <?php } } ?>
