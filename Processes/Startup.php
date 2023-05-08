@@ -7,7 +7,6 @@ use Boa\HTTP\Router;
 
 class Startup {
     private Router $Router;
-    private Session $Session;
 
     public function __construct() {
         $this->CheckInstallation();
@@ -55,8 +54,8 @@ class Startup {
     private function SessionStart(): void {
         require_once __DIR__ . '/../Boa/Authentication/Session.php';
 
-        $this->Session = new Session();
-        $this->Session->Start();
+        $Session = new Session();
+        $Session->Start();
     }
 
     private function Router(): void {

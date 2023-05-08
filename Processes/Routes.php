@@ -17,7 +17,9 @@ class Routes
 
     function Public() {
         $this->Router->GET('', '/Screens/Homepage.php');
-        $this->Router->GET('/version', '/Screens/Version.php');
+        if (PIX_ALLOW_ABOUT) {
+            $this->Router->GET('/version', '/Screens/Version.php');
+        }
     }
 
     function Album() {

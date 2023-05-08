@@ -30,7 +30,8 @@
             See the License for the specific language governing permissions and
             limitations under the License.
         </p>
-        <h2 class="pix-text-lg pix-font-medium pix-header">Software</h2>
+
+        <h2 class="pix-text-lg pix-font-medium pix-header">Installed Software</h2>
         <table>
             <tr>
                 <th class="pix-th">Software</th>
@@ -46,7 +47,23 @@
             </tr>
             <tr>
                 <td class="pix-td">Imagick</td>
-                <td class="pix-td"><?= $ImageMagick::getVersion()['versionString']; ?></td>
+                <td class="pix-td"><?= $ImageMagick::getVersion()['versionNumber']; ?></td>
+            </tr>
+        </table>
+
+        <h2 class="pix-text-lg pix-font-medium pix-header">Installed Skins</h2>
+        <table>
+            <tr>
+                <th class="pix-th">Skin</th>
+                <th class="pix-th">Version</th>
+                <th class="pix-th">License</th>
+                <th class="pix-th">Author(s)</th>
+            </tr>
+            <tr>
+                <td class="pix-td">Lakeview</td>
+                <td class="pix-td">1.0.0</td>
+                <td class="pix-td">Apache 2.0</td>
+                <td class="pix-td">Lewis Milburn</td>
             </tr>
         </table>
     </main>

@@ -16,3 +16,4 @@ const DATABASE_PORT = 3306;
 const DATABASE_USER = '';
 const DATABASE_PASS = '';
 const DATABASE_PREFIX = 'pix_';
+const PIX_ALLOW_ABOUT = true;

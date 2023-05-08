@@ -92,8 +92,16 @@ body {
 
 /* Card */
 .pix-card {
-    @apply rounded-md bg-neutral-50 shadow-lg hover:shadow-xl transition duration-200;
+    @apply rounded-md bg-neutral-50 dark:bg-neutral-900 hover:dark:bg-neutral-800 shadow-lg hover:shadow-xl transition duration-200;
 }
 .pix-card-content {
     @apply px-6 py-4;
+}
+
+/* Table */
+.pix-th {
+    @apply pix-td pix-font-medium;
+}
+.pix-td {
+    @apply border-collapse border border-neutral-200 dark:border-neutral-800 px-2 py-1;
 }
