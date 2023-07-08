@@ -3,7 +3,7 @@
 global $PixRequest;
 
 if (!$PixRequest) {
-    echo 'Non-Pixelset request detected, aborting...';
+    echo 'Non-Pix request detected, aborting...';
     exit;
 }
 
