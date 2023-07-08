@@ -3,8 +3,6 @@
 namespace Pix;
 
 use Boa\HTTP\Router;
-use Pix\Album;
-use Pix\URLParser;
 
 class Routes
 {
@@ -15,16 +13,18 @@ class Routes
         $this->Router = $Router;
     }
 
-    function Public() {
+    public function Public()
+    {
         $this->Router->GET('', '/Screens/Homepage.php');
         if (PIX_ALLOW_ABOUT) {
             $this->Router->GET('/version', '/Screens/Version.php');
         }
     }
 
-    function Album() {
-        require __DIR__ . '/../Processes/Database/Album.php';
-        require __DIR__ . '/../Processes/URLParser.php';
+    public function Album()
+    {
+        require __DIR__.'/../Processes/Database/Album.php';
+        require __DIR__.'/../Processes/URLParser.php';
 
         $Album = new Album();
         $Albums = $Album->GetAll();

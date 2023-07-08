@@ -5,10 +5,12 @@ namespace Pix;
 use Boa\Authentication\Session;
 use Boa\HTTP\Router;
 
-class Startup {
+class Startup
+{
     private Router $Router;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->CheckInstallation();
         $this->Settings();
         $this->ProductInfo();
@@ -17,55 +19,61 @@ class Startup {
         $this->Routes();
     }
 
-    private function CheckInstallation(): void {
+    private function CheckInstallation(): void
+    {
         $ErrorMsg = '';
-        if (phpversion() < 8){
+        if (phpversion() < 8) {
             $ErrorMsg = 'Pix requires PHP 8 or higher to function, please update your PHP installation.<br>';
         }
-        if (!extension_loaded('imagick')){
+        if (!extension_loaded('imagick')) {
             $ErrorMsg .= 'Imagick is not installed, Pix requires Imagick to function. More information: https://www.php.net/manual/en/imagick.setup.php<br>';
         }
         if ($ErrorMsg != '') {
             ob_end_clean();
-            require_once __DIR__ . '/ErrorHandler.php';
+            require_once __DIR__.'/ErrorHandler.php';
             $ErrorHandler = new ErrorHandler();
             $ErrorHandler->Fatal($ErrorMsg);
         }
     }
 
-    private function Settings(): void {
-        if (file_exists(__DIR__ . '/../Settings.php')) {
-            require_once __DIR__ . '/../Settings.php';
+    private function Settings(): void
+    {
+        if (file_exists(__DIR__.'/../Settings.php')) {
+            require_once __DIR__.'/../Settings.php';
         } else {
             echo 'Settings.php not found, aborting...';
             exit;
         }
     }
 
-    private function ProductInfo(): void {
-        if (file_exists(__DIR__ . '/ProductInfo.php')) {
-            require_once __DIR__ . '/ProductInfo.php';
+    private function ProductInfo(): void
+    {
+        if (file_exists(__DIR__.'/ProductInfo.php')) {
+            require_once __DIR__.'/ProductInfo.php';
         } else {
             echo 'ProductInfo.php not found, aborting...';
             exit;
         }
     }
 
-    private function SessionStart(): void {
-        require_once __DIR__ . '/../Boa/Authentication/Session.php';
+    private function SessionStart(): void
+    {
+        require_once __DIR__.'/../Boa/Authentication/Session.php';
 
         $Session = new Session();
         $Session->Start();
     }
 
-    private function Router(): void {
-        require_once __DIR__ . '/../Boa/HTTP/Router.php';
+    private function Router(): void
+    {
+        require_once __DIR__.'/../Boa/HTTP/Router.php';
 
         $this->Router = new Router();
     }
 
-    private function Routes(): void {
-        require_once __DIR__ . '/Routes.php';
+    private function Routes(): void
+    {
+        require_once __DIR__.'/Routes.php';
 
         $Routes = new Routes($this->Router);
         $Routes->Public();

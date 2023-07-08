@@ -2,8 +2,10 @@
 
 namespace Pix;
 
-class ErrorHandler {
-    function Fatal(string $ErrorMessage) {
+class ErrorHandler
+{
+    public function Fatal(string $ErrorMessage)
+    {
         echo '<!DOCTYPE html>
         <html lang="en">
             <head>
